@@ -1,0 +1,27 @@
+class Camara:
+    def tomar_foto(self):
+        print("[CAMARA] Foto capturada.")
+
+class Grabadora():
+    def grabar_audio(self):
+        print("[AUDIO] Grabando audio.")
+
+class Smartphone(Camara, Grabadora):
+    def __init__(self, nro):
+        self.__nro = nro
+
+    @property                       
+    def nro(self):
+        return self.__nro
+
+    @nro.setter
+    def nro(self, valor):
+        self.__nro = valor
+
+    def hacer_llamada(self, numero):
+        print(f"[LLAMADA] Mi celular {self.__nro} llamando al {numero}...")
+
+Micelu = Smartphone(72204904)
+Micelu.tomar_foto()
+Micelu.grabar_audio()
+Micelu.hacer_llamada(77431145)
